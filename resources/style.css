@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 900px;
+  margin: 10px auto;
+  font-family: Verdana, sans-serif;
+  line-height: 1.4;
+  color: #333;
+  padding: 15px;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  color: #1c6296;
+}
+
+h1 span {
+  display: block;
+  font-size: smaller;
+  font-style: italic;
+  font-weight: normal;
+}
+
+p {
+  padding: 0 15px;
+}
+
+a {
+  color: #1c6296;
+  text-decoration: none;
+}
+
+.icon {
+  padding: .5em;
+}
+
+/*Animations*/
+.spin {
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  100% { transform:rotate(360deg); }
+}
+
+.sway {
+    animation: sway1 20s infinite;
+    transform-origin: 100% 0% 0%;
+}
+@keyframes sway1 {
+    0%, 100%{ transform: rotate(-80deg);}
+    50%{ transform: rotate(80deg); }
+}
+
+.zoom {
+  transition: transform .2s;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5); 
+}
+/*---------------------------*/
+
+.overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 2;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 30px;
+  color: #fff;
+  font-weight: bold;
+}
+
+form .fieldset {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form .fieldset .legend {
+  width: 100%;
+  padding: 15px;
+}
+form .fieldset .legend div:nth-child(1) {
+  font-size: 28px;
+  color: #1c6296;
+  text-align: center;
+  font-weight: bold;
+}
+form .fieldset .legend div:nth-child(2) {
+  font-size: 24px;
+  color: #1C6296;
+  text-align: center;
+  font-style: italic;
+}
+form .fieldset .legend div:nth-child(3) {
+  margin-top: 15px;
+  font-size: smaller;
+  text-align: center;
+  font-weight: bold;
+}
+form .fieldset .legend div:nth-child(4) {
+  font-size: smaller;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+}
+form .fieldset .legend div:nth-child(5) {
+  margin-top: 15px;
+}
+form .fieldset .legend div:nth-child(6) {
+  margin-top: 15px;
+  font-style: italic;
+}
+
+.msg {
+  padding: 15px;
+  margin: 10px;
+  width: 100%;
+  border: thin solid;
+  border-radius: 5px;
+}
+
+.msg.error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+.msg.success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+form .item {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+form .item-submit {
+  align-items: left;
+}
+
+form .item > label:nth-child(1) {
+  font-weight: bold;
+}
+form .item > label:nth-child(2) {
+  font-size: smaller;
+  font-style: italic;
+}
+form .item > label:nth-child(3) {
+  margin-top: 10px;
+}
+form .item > label:nth-child(4) {
+  margin-top: 5px;
+  font-style: italic;
+}
+form .item-file > label:nth-child(n+3) {
+  margin-top: initial;
+  font-style: initial;
+  font-size: smaller;
+  font-weight: bold;
+}
+form .item-file > label:nth-child(3) {
+  margin-top: 5px;
+}
+
+
+form .item input,
+form .item select,
+form .item textarea {
+  margin: 5px 0;
+}
+
+form .item textarea {
+  height: 100%;
+  resize: vertical;
+}
+
+form .item .choices {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+}
+
+form .item .choices label {
+  min-width: 33%;
+  padding-right: 15px;
+}
+
+form .item .bestätigung choices {
+	font-weight: bold;
+}
+
+form .item .ranges {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form .item .ranges select {
+  flex-grow: 1;
+}
+
+form .item input[type="checkbox"] {
+  width: initial;
+  vertical-align: middle;
+  /*transform: scale(1.5);*/
+}
+
+form .item.error {
+  color: #a94442;
+}
+
+/* mobile phones: */
+form .item {
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  /* landscape: */
+  form .item {
+    width: calc(100% / 2);
+  }
+}
+
+@media (min-width: 768px) {
+  /* tablet: */
+  form .item {
+    width: calc(100% / 2);
+  }
+}
+
+form .item-wide {
+  width: 100%;
+}
+
+footer ul {
+  list-style: none;
+  width: 100%;
+  padding: 0 10px;  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+ 
+footer ul li {
+  padding: 0 10px;
+}
+
+.hidden {
+  display: none !important;
+}
